@@ -7,7 +7,7 @@ Anggota Kelompok :
 2. Aullya Hannan Wulandari	2017051079*/
 
 struct node{
-	char task[101];
+	char *task;
 	node *address;
 };
 
