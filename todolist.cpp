@@ -33,7 +33,8 @@ int main(){
 				cout << "Masukkan tugas yang ingin ditambahkan : ";
 				// word = input
 				cin.getline(word, 100);
-				job = addnewtask(job, word)
+				job = addnewtask(job, word);
+				break;
 
 			case 4:
 				exit(1);
