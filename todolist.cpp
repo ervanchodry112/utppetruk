@@ -7,6 +7,7 @@ Anggota Kelompok :
 2. Aullya Hannan Wulandari	2017051079*/
 
 struct node{
+	// char *task;
 	char *task;
 	node *address;
 };
@@ -20,19 +21,23 @@ node *addnewtask(node *start, char *newTask);
 int main(){
 	node *job = NULL;
 	char *word;
+	// int word;
+	int pilih = 1;
 
 	while(true){
-		int pilih = 1;
 		system("cls");
+		cin >> pilih;
+
 		switch(pilih){
 			case 1:
-				cin >> pilih;
+				print(job);
+				system("pause");
 				break;
 
 			case 2:
 				cout << "Masukkan tugas yang ingin ditambahkan : ";
 				// word = input
-				cin.getline(word, 100);
+				cin >> word;
 				job = addnewtask(job, word);
 				break;
 
