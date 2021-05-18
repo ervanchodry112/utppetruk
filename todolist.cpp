@@ -20,15 +20,15 @@ int main(){
 	int pilih = 1;
 	
 	do{
-		switch(pilih){
-			case 1:
-				cout << menu() << endl;
-				cout << "Masukkan pilihan : ";
-				cin >> pilih;
-				break;
+		// switch(pilih){
+		// 	case 1:
+		// 		cout << menu() << endl;
+		// 		cout << "Masukkan pilihan : ";
+		// 		cin >> pilih;
+		// 		break;
 
-		}
-	}while(pilih != 4)
+		// }
+	}while(pilih != 4);
 
 }
 
