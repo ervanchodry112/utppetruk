@@ -14,7 +14,7 @@ struct node{
 void print(node *point);
 void menu();
 char *input();
-node *addnewtask(node *start, char *do);
+node *addnewtask(node *start, char *newTask);
 
 
 int main(){
