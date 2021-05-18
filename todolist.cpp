@@ -19,10 +19,10 @@ node *addnewtask(node *start, char *newTask);
 
 int main(){
 	node *job = NULL;
-	int pilih = 1;
 	char *word;
 
 	while(true){
+		int pilih = 1;
 		system("cls");
 		switch(pilih){
 			case 1:
