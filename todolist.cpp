@@ -21,7 +21,6 @@ node *addnewtask(node *start, char *newTask);
 int main(){
 	node *job = NULL;
 	char *word;
-	// int word;
 	int pilih = 1;
 
 	while(true){
@@ -72,8 +71,18 @@ void print(node *point){
 
 node *addnewtask(node *start, char *newTask){
 	node *temp = new node;
-	temp->task = newTask;
+	strcpy(temp->task, newTask);
 	temp->address = start;
 	start = temp;
 	return start;
 }
+
+// void tambahBelakang(node *baru){
+// 	nodeLingkaran *tail;
+// 	baru->next = NULL;
+// 	tail = head;
+// 	while(tail->next != NULL){
+// 		tail = tail->next;
+// 	}
+// 	tail->next = baru:
+// }
