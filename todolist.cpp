@@ -13,25 +13,9 @@ struct node{
 };
 
 void print(node *point);	
-void menu(){
-	cout<<"Pilih Menu : "<<endl;
-	cout<<"\t1. Add Task"<<endl;
-	cout<<"\t2. Finish Task"<<endl;
-	cout<<"\t3. Exit"<<endl;
-}
-char *input(){
-	char *task = new char [101];
+void menu();
+char *input();
 
-	cout<<"Masukkan pilihan anda : ";
-	cin>>task;
-	
-	static char bantu[101];
-	for(int i = 0; i < strlen(task); i++){
-		bantu[i] = toupper(task[i]);
-	}
-	
-	return bantu;
-}
 int main(){
 	node *job = NULL;
 	int pilih = 1;
@@ -56,4 +40,23 @@ void print(node *point){
 	{
 		cout << "Belum Ada Tugas yang harus diselesaikan!";
 	}
+}
+void menu(){
+	cout<<"Pilih Menu : "<<endl;
+	cout<<"\t1. Add Task"<<endl;
+	cout<<"\t2. Finish Task"<<endl;
+	cout<<"\t3. Exit"<<endl;
+}
+char *input(){
+	char *task = new char [101];
+
+	cout<<"Masukkan pilihan anda : ";
+	cin>>task;
+	
+	static char bantu[101];
+	for(int i = 0; i < strlen(task); i++){
+		bantu[i] = toupper(task[i]);
+	}
+	
+	return bantu;
 }
