@@ -17,7 +17,6 @@ void menu();
 char *input();
 node *addnewtask(node *start, char *newTask);
 
-
 int main(){
 	node *job = NULL;
 	char *word;
@@ -86,3 +85,25 @@ node *addnewtask(node *start, char *newTask){
 // 	}
 // 	tail->next = baru:
 // }
+
+}
+void menu(){
+	cout<<"Pilih Menu : "<<endl;
+	cout<<"\t1. Add Task"<<endl;
+	cout<<"\t2. Finish Task"<<endl;
+	cout<<"\t3. Exit"<<endl;
+}
+char *input(){
+	char *task = new char [101];
+
+	cout<<"Masukkan pilihan anda : ";
+	cin>>task;
+	
+	static char bantu[101];
+	for(int i = 0; i < strlen(task); i++){
+		bantu[i] = toupper(task[i]);
+	}
+	
+	return bantu;
+}
+
