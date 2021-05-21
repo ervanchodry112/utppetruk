@@ -17,25 +17,25 @@ struct node{
 class Mylist{
 	public:
 		
-		node *head;
+		node *head;	//inisialisasi link lis pertama
 		Mylist(){
 			head = NULL;
 		}
 
-		bool ifEmpty(){
-			return head == NULL;
+		bool ifEmpty(){		//Mengecek NULL berisi NULL atau bukan
+			return head == NULL;	
 		}
 
-		void addLast(int n){
-			node *temp = new node;
+		void addLast(int n){		//berisi parameter int n untuk id
+			node *temp = new node;	//mengalokasikan tipe data node
 			temp->id = n;
-			cin >> temp->task;
-			temp->link = NULL;
+			cin >> temp->task;	//memasukkan  variabel temp di poin task
+			temp->link = NULL;	//link list akhir berisi NULL
 			
-			if(ifEmpty()){
-				head = temp;
+			if(ifEmpty()){	
+				head = temp;	//nilai head diisi dengan nilai temp
 			}else{
-				node *tail = head;
+				node *tail = head;	//node *tail berisi head 
 				while(tail->link != NULL){
 					tail = tail->link;
 				}
@@ -51,7 +51,7 @@ class Mylist{
 			node *temp;
 			node *cek = head;
 			cout << "Masukkan ID task yang telah selesai : ";
-			cin >> del;
+			cin >> del;	
 			if(cek->id == del){
 				node *temp = head;
 				head = head->link;
@@ -99,11 +99,11 @@ int main(){
 		pilih = 1;
 		system("cls");
 		menu();
-		cin >> pilih;
+		cin >> pilih;	//memilih menu task
 
 		switch(pilih){
 			case 1:
-				tugas.print();
+				tugas.print();		//memanggil fungsi void print
 				system("pause");
 				break;
 
@@ -111,21 +111,21 @@ int main(){
 				cout << "Masukkan tugas yang ingin ditambahkan : ";
 				// word = input();
 				index++;
-				tugas.addLast(index);
+				tugas.addLast(index);	//Memanggil fungsi void addLast
 
 				system("pause");
 				break;
 
 			case 3:
-				tugas.delTask();
+				tugas.delTask();	//Memanggil fungsi delTask
 				system("pause");
 				break;
 
 			case 4:
-				exit(1);
+				exit(1);	//keluar program
 
 			default:
-				cout << "Input yang anda masukkan tidak valid" << endl;
+				cout << "Input yang anda masukkan tidak valid" << endl;	//output yang ditampilkan ketika user menginputkan selain case
 				system("pause");
 		}
 	}
