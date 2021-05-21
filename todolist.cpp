@@ -4,7 +4,8 @@ using namespace std;
 /* PROGRAM TO DO LIST 
 Anggota Kelompok :
 1. Ervan Chodry				2017051001
-2. Aullya Hannan Wulandari	2017051079*/
+2. Aullya Hannan Wulandari	2017051079
+*/
 
 
 struct node{
@@ -51,16 +52,22 @@ class Mylist{
 			node *cek = head;
 			cout << "Masukkan ID task yang telah selesai : ";
 			cin >> del;
-			while(cek->link->id != del-1){
-				cek = cek->link;
-			}
-			if(cek->link->id == del-1){
-				temp = cek->link;
-				cek->link = temp->link;
+			if(cek->id == del){
+				node *temp = head;
+				head = head->link;
 				delete temp;
-				cout << "Tugas berhasil dihapus!" << endl;
 			}else{
-				cout << "Id tidak dimtemukkan!" << endl;
+				while(cek->link->id != del){
+						cek = cek->link;
+				}
+				if(cek->link->id == del){
+					temp = cek->link;
+					cek->link = temp->link;
+					delete temp;
+					cout << "Tugas berhasil dihapus!" << endl;
+				}else{
+					cout << "Id tidak dimtemukkan!" << endl;
+				}
 			}
 		}
 
@@ -72,7 +79,7 @@ class Mylist{
 			}else{
 				cout << "Tugas yang harus segera anda selesaikan : " << endl;
 				while(tail != NULL){
-					cout << "id \t: " << tail->id + 1 << endl;
+					cout << "id \t: " << tail->id << endl;
 					cout << "Tugas \t: " << tail->task << endl << endl;
 					tail = tail->link;
 				}
@@ -103,9 +110,9 @@ int main(){
 			case 2:
 				cout << "Masukkan tugas yang ingin ditambahkan : ";
 				// word = input();
+				index++;
 				tugas.addLast(index);
 
-				index++;
 				system("pause");
 				break;
 
