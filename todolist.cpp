@@ -43,6 +43,27 @@ class Mylist{
 			cout << "Tugas telah ditambahkan" << endl;
 		}
 
+		void delTask(){
+			system("cls");
+			static int del;
+			print();
+			node *temp;
+			node *cek = head;
+			cout << "Masukkan ID task yang telah selesai : ";
+			cin >> del;
+			while(cek->link->id != del-1){
+				cek = cek->link;
+			}
+			if(cek->link->id == del-1){
+				temp = cek->link;
+				cek->link = temp->link;
+				delete temp;
+				cout << "Tugas berhasil dihapus!" << endl;
+			}else{
+				cout << "Id tidak dimtemukkan!" << endl;
+			}
+		}
+
 		void print(){
 			system("cls");
 			node *tail = head;
@@ -83,7 +104,13 @@ int main(){
 				cout << "Masukkan tugas yang ingin ditambahkan : ";
 				// word = input();
 				tugas.addLast(index);
+
 				index++;
+				system("pause");
+				break;
+
+			case 3:
+				tugas.delTask();
 				system("pause");
 				break;
 
