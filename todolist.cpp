@@ -29,7 +29,11 @@ class Mylist{
 		void addLast(int n){		//berisi parameter int n untuk id
 			node *temp = new node;	//mengalokasikan tipe data node
 			temp->id = n;
-			cin >> temp->task;	//memasukkan  variabel temp di poin task
+			char word[51];
+			cin >> word;
+			for(int i = 0; i < 50; i++){
+				temp->task[i] = toupper(word[i]);
+			}
 			temp->link = NULL;	//link list akhir berisi NULL
 			
 			if(ifEmpty()){	
